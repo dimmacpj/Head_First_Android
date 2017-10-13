@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thanks for choosing our awesome blend tea. How do you want it serving?"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+        android:id="@+id/text1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature:"
+        android:paddingTop="16dp"
+        android:layout_below="@id/text1"
+        android:layout_alignLeft="@id/text1"
+        android:id="@+id/text2"/>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="HOT"
+        android:textOff="COLD"
+        android:layout_alignTop="@id/text2"
+        android:layout_toEndOf="@id/text2"
+        android:checked="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/milk"
+        android:text="Milk"
+        android:layout_below="@id/text2"
+        android:layout_alignLeft="@id/text2"
+        android:checked="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sugar"
+        android:text="Sugar"
+        android:layout_below="@id/milk"
+        android:layout_alignLeft="@id/milk"
+        android:checked="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/sugar"
+        android:layout_below="@id/sugar"
+        android:text="Lemon" />
+
+</RelativeLayout>
+

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Layout</string>
+    <string name="find_button">FIND BEER!</string>
+    <string name="brands_text">sdddfff</string>
+    <string-array name="colors">
+        <item>light</item>
+        <item>amber</item>
+        <item>brown</item>
+        <item>dark</item>
+    </string-array>
+</resources>
