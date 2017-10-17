@@ -1,5 +1,6 @@
 package com.example.workout;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
@@ -26,6 +27,13 @@ public class WorkoutDetailFragment extends Fragment {
         detailView = (TextView)view.findViewById(R.id.details_text);
         if (savedInstanceState!=null){
             workoutId = savedInstanceState.getInt("workoutId");
+        }else {
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+            StopwatchFragment stopwatchFragment = new StopwatchFragment();
+            ft.replace(R.id.stopwatch_container, stopwatchFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
         }
         return view;
     }
