@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String CREATE_DRINK = "create table drink ("
-            + "id integer primary key autoincrement, "
+            + "_id integer primary key autoincrement, "
             + "name text, "
             + "description text, "
             + "image_resource_id integer) ";

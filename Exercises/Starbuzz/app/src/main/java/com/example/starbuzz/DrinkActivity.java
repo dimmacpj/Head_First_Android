@@ -8,6 +8,8 @@ import android.media.Image;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ public class DrinkActivity extends AppCompatActivity {
     private int id;
     private ImageView imageView;
     private TextView nameView, descriptionView;
+    private CheckBox favorCheckbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class DrinkActivity extends AppCompatActivity {
         try{
             StarbuzzDatabaseHelper helper = new StarbuzzDatabaseHelper(this);
             SQLiteDatabase db = helper.getReadableDatabase();
-            Cursor cursor = db.query("drink", new String[] {"name", "description", "image_resource_id"}, "id = ?", new String[] {Integer.toString(id)}, null, null, null);
+            Cursor cursor = db.query("drink", new String[] {"name", "description", "image_resource_id"}, "_id = ?", new String[] {Integer.toString(id)}, null, null, null);
             if (cursor.moveToFirst()){
                 nameView.setText(cursor.getString(cursor.getColumnIndex("name")));
                 descriptionView.setText(cursor.getString(cursor.getColumnIndex("description")));
@@ -45,5 +48,17 @@ public class DrinkActivity extends AppCompatActivity {
         }catch (SQLiteException e){
             Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT).show();
         }
+        favorCheckbox = (CheckBox) findViewById(R.id.favorite_checkbox);
+        favorCheckbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Boolean checked = ((CheckBox)view).isChecked();
+                if(checked){
+
+                }else {
+                    
+                }
+            }
+        });
     }
 }
