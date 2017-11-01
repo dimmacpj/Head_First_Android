@@ -21,4 +21,16 @@
         android:entries="@array/options"
         android:id="@+id/options_list"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Your favourite drinks:"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/favorite_listview"/>
+
 </LinearLayout>
