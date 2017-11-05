@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 public class DelayedMessageService extends IntentService {
 
-    private NotificationUtils notificationUtils;
+    //private NotificationUtils notificationUtils;
 
     public static final String EXTRA_MESSAGE = "message";
     public static final int NOTIFICATION_ID = 1;
@@ -68,7 +68,7 @@ public class DelayedMessageService extends IntentService {
 
     private void showText(final String text){
         //Log.v("DelayedMessageService", "The message is " + text);
-        /*NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         String channel_id = "test_channel_01";
         String channelName = "test channel";
         int importance = NotificationManager.IMPORTANCE_HIGH;
@@ -84,12 +84,12 @@ public class DelayedMessageService extends IntentService {
         taskStackBuilder.addNextIntent(intent);
         PendingIntent pi = taskStackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Notification notification = new NotificationCompat.Builder(this, channel_id).setSmallIcon(R.mipmap.ic_launcher).setContentTitle(getString(R.string.app_name)).setAutoCancel(true).setContentIntent(pi).setContentText(text).build();
-        notificationManager.notify(NOTIFICATION_ID, notification);*/
-        notificationUtils = new NotificationUtils(this);
+        Notification notification = new NotificationCompat.Builder(this, channel_id).setSmallIcon(android.R.drawable.stat_notify_chat).setContentTitle(getString(R.string.app_name)).setAutoCancel(true).setContentIntent(pi).setContentText(text).build();
+        notificationManager.notify(NOTIFICATION_ID, notification);
+        /*notificationUtils = new NotificationUtils(this);
         String title = getString(R.string.app_name);
         String body = text;
         Notification.Builder nb = notificationUtils.getNotification(title, body);
-        notificationUtils.getManager().notify(NOTIFICATION_ID, nb.build());
+        notificationUtils.getManager().notify(NOTIFICATION_ID, nb.build());*/
     }
 }

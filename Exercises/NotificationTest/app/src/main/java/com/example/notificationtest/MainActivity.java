@@ -26,15 +26,21 @@ public class MainActivity extends AppCompatActivity {
         buttonAndroid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String title = editTextTitleAndroid.getText().toString();
-                String author = editTextAuthorAndroid.getText().toString();
+                //String title = editTextTitleAndroid.getText().toString();
+                //String author = editTextAuthorAndroid.getText().toString();
+                String title = "this is title";
+                String author = "this is body";
 
-                if(!TextUtils.isEmpty(title) && !TextUtils.isEmpty(author)) {
+                Notification.Builder nb = mNotificationUtils.
+                        getAndroidChannelNotification(title, "By " + author);
+
+                mNotificationUtils.getManager().notify(101, nb.build());
+                /*if(!TextUtils.isEmpty(title) && !TextUtils.isEmpty(author)) {
                     Notification.Builder nb = mNotificationUtils.
                             getAndroidChannelNotification(title, "By " + author);
 
                     mNotificationUtils.getManager().notify(101, nb.build());
-                }
+                }*/
             }
         });
 

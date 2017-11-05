@@ -24,8 +24,10 @@ public class NotificationUtils extends ContextWrapper {
 
     public void createChannel(){
         NotificationChannel nc = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
-        //nc.enableLights(true);
-        //nc.setLightColor(Color.GREEN);
+        nc.enableLights(true);
+        nc.setLightColor(Color.GREEN);
+        nc.enableVibration(true);
+        nc.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
         getManager().createNotificationChannel(nc);
     }
 
@@ -37,6 +39,6 @@ public class NotificationUtils extends ContextWrapper {
     }
 
     public Notification.Builder getNotification(String title, String body){
-        return new Notification.Builder(getApplicationContext(), CHANNEL_ID).setContentTitle(title).setContentText(body).setSmallIcon(R.mipmap.ic_launcher).setAutoCancel(true);
+        return new Notification.Builder(getApplicationContext(), CHANNEL_ID).setContentTitle(title).setContentText(body).setSmallIcon(android.R.drawable.stat_notify_chat).setAutoCancel(true);
     }
 }
