@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch ((int)l){
                     case 1:
-                        replaceFrag(new PizzaFragment());
+                        replaceFrag(new PizzaMaterialFragment());
                         getSupportActionBar().setTitle("Pizzas");
                         break;
                     case 2:
