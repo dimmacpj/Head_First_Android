@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.RecyclerView xmlns:anroid="http://schemas.android.com/apk/res/android"
+    anroid:layout_width="match_parent"
+    anroid:layout_height="match_parent"
+    anroid:id="@+id/pasta_recycler"
+    anroid:scrollbars="vertical">
+
+</android.support.v7.widget.RecyclerView>

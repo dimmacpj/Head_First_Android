@@ -1,6 +1,7 @@
 package com.example.pizza;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -39,6 +40,14 @@ public class PizzaMaterialFragment extends Fragment {
         pizzaRcycler.setAdapter(adapter);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         pizzaRcycler.setLayoutManager(llm);
+        adapter.setListener(new CaptionedImagesAdapter.Listener() {
+            @Override
+            public void onClick(int position) {
+                Intent intent = new Intent(getActivity(), PizzaDetailActivity.class);
+                intent.putExtra(PizzaDetailActivity.EXTRA_PIZZANO, position);
+                startActivity(intent);
+            }
+        });
         return pizzaRcycler;
     }
 

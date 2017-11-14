@@ -1,6 +1,7 @@
 package com.example.pizza;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.net.wifi.hotspot2.pps.HomeSp;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("Pizzas");
                         break;
                     case 2:
-                        replaceFrag(new PastaFragment());
+                        replaceFrag(new PastaMaterialFragment());
                         getSupportActionBar().setTitle("Pasta");
 
                         break;
@@ -53,10 +55,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
                 mDrawerlayout.openDrawer(Gravity.START);
+                break;
+            case R.id.action_create_order:
+                Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.action_settings:
+                break;
+            default:
+                break;
         }
         return true;
     }
