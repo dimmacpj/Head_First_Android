@@ -3,8 +3,35 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/top_pizza_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_top"/>
+        android:text="Favourite Pizzas"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_centerHorizontal="true"/>
+    
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/top_pizza_recycler"
+        android:layout_below="@id/top_pizza_text"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/top_pasta_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Favourite Pastas"
+        android:layout_below="@id/top_pizza_recycler"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/top_pasta_recycler"
+        android:layout_below="@id/top_pasta_text"
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>

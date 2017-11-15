@@ -13,6 +13,9 @@ public class OrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         TextView orderText = (TextView) findViewById(R.id.order_text);
         orderDetail = getIntent().getStringExtra(ORDER_NAME);
         if(orderDetail != null){

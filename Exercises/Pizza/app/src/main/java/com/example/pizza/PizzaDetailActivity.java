@@ -2,6 +2,7 @@ package com.example.pizza;
 
 import android.content.Intent;
 import android.media.Image;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 
 public class PizzaDetailActivity extends AppCompatActivity {
 
-    private ShareActionProvider shareActionProvider;
+    private android.support.v7.widget.ShareActionProvider shareActionProvider;
     public static final String EXTRA_PIZZANO = "pizzaNo";
     private TextView nameText;
     private ImageView imageView;
@@ -21,7 +22,7 @@ public class PizzaDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza_detail);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         int pizzaNo = (Integer) getIntent().getExtras().get(EXTRA_PIZZANO);
         String pizzaName = Pizza.pizzas[pizzaNo].getName();
@@ -37,7 +38,7 @@ public class PizzaDetailActivity extends AppCompatActivity {
 
         String pizzaName = nameText.getText().toString();
         MenuItem menuItem = menu.findItem(R.id.action_share);
-        shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
+        shareActionProvider = (android.support.v7.widget.ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, pizzaName);

@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                         replaceFrag(new StoreFragment());
                         getSupportActionBar().setTitle("Stores");
                         break;
+                    case 4:
+                        finish();
                     default:
                         replaceFrag(new TopFragment());
                         getSupportActionBar().setTitle("Bits and Pizzas");

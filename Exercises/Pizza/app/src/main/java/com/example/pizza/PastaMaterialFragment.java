@@ -35,7 +35,14 @@ public class PastaMaterialFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-
+        adapter.setListener(new CaptionedImagesAdapter.Listener() {
+            @Override
+            public void onClick(int position) {
+                Intent intent = new Intent(getActivity(), PastaDetailActivity.class);
+                intent.putExtra(PastaDetailActivity.EXTRA_PASTANO, position);
+                startActivity(intent);
+            }
+        });
         return recyclerView;
     }
 }
